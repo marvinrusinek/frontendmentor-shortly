@@ -1,0 +1,47 @@
+<div class="header" fxLayout="row" fxLayoutAlign="space-between center" fxLayoutAlign.gt-md="start center"
+     [ngStyle.lt-lg]="{'padding-left': '25px', 'padding-right': '25px'}">
+  <img src="assets/images/logo.svg" alt="Shortly logo">
+  <div class="header__menu-container" fxLayout="row" fxLayoutAlign="space-between center" fxShow [fxHide.lt-md]="true">
+    <div fxLayout="row" fxLayoutGap="30px">
+      <a class="nav-link" (click)="navigateToSection('features')" fragment="features">
+        <h4 class="header__menu-item">Features</h4>
+      </a>
+      <a class="nav-link" (click)="navigateToSection('pricing')" fragment="pricing">
+        <h4 class="header__menu-item">Pricing</h4>
+      </a>
+      <a class="nav-link" (click)="navigateToSection('resources')" fragment="resources">
+        <h4 class="header__menu-item">Resources</h4>
+      </a>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="space-evenly center" fxLayoutGap="40px">
+      <a class="nav-link" (click)="navigateToSection('login')" fragment="login">
+        <h4 class="header__menu-item">Login</h4>
+      </a>
+      <a class="nav-link" (click)="navigateToSection('signup')" fragment="signup">
+        <button class="small rounded signup">Sign Up</button>
+      </a>
+    </div>
+  </div>
+  <button class="header__hamburger-button" fxHide [fxShow.lt-md]="true" (click)="showMenu = !showMenu">
+    <i class="fas fa-bars"></i>
+  </button>
+</div>
+<div class="hamburger-menu" *ngIf="showMenu" [@enterAnimation] fxLayout="column" fxLayoutAlign="space-evenly center"
+     fxHide [fxShow.lt-md]="true">
+  <a class="nav-link" (click)="navigateToSection('features')" fragment="features">
+    <h2 class="hamburger-menu__menu-item">Features</h2>
+  </a>
+  <a class="nav-link" (click)="navigateToSection('pricing')" fragment="pricing">
+    <h2 class="hamburger-menu__menu-item">Pricing</h2>
+  </a>
+  <a class="nav-link" (click)="navigateToSection('resources')" fragment="resources">
+    <h2 class="hamburger-menu__menu-item">Resources</h2>
+  </a>
+  <div class="hamburger-menu__separator"></div>
+  <a class="nav-link" (click)="navigateToSection('login')" fragment="login">
+    <h2 class="hamburger-menu__menu-item">Login</h2>
+  </a>
+  <a class="nav-link" (click)="navigateToSection('signup')" fragment="signup">
+    <button class="hamburger-menu__menu-button rounded">Sign Up</button>
+  </a>
+</div>
